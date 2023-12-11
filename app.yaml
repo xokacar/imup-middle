@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alphav1
+kind: Application
+metadata: 
+  name: imup
+  namespace: argocd
+  annotations:
+    argocd-image-updater.argoproj.io/write-back-method: git:secret:secrets/git-creds
+    argocd-image-updater.argoproj.io/image-list: "enhanced-devops=crmasraf001.azurecr.io/enhanced-devops:latest"
+    argocd-image-updater.argoproj.io/enhanced-devops.update-strategy: latest
+spec: 
+  project: default
+  source: 
+    repoURL:
+    path:
+    helm:
+     valueFiles:
+     - ./imup-chart/values.yaml
+    destination:
+      server : 'https:kubernetes.default.svc'
+      namespace: argocd 
