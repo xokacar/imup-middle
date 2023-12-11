@@ -8,7 +8,7 @@ image:
   repository: crmasraf001.azurecr.io/enhanced-devops
   pullPolicy: Always
   # Overrides the image tag whose default is the chart appVersion.
-  tag: ""
+  tag: latest
 
 imagePullSecrets: 
   - name: acr-cred
