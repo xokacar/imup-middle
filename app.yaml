@@ -1,4 +1,4 @@
-apiVersion: argoproj.io/v1alphav1
+apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata: 
   name: imup
@@ -10,11 +10,11 @@ metadata:
 spec: 
   project: default
   source: 
-    repoURL:
-    path:
+    repoURL: https://github.com/xokacar/imup-middle
+    path: HEAD
     helm:
      valueFiles:
      - ./imup-chart/values.yaml
-    destination:
-      server : 'https:kubernetes.default.svc'
-      namespace: argocd 
+  destination:
+    server : 'https:kubernetes.default.svc'
+    namespace: argocd 
