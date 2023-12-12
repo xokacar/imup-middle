@@ -19,6 +19,13 @@ image:
         - ps aux | grep node | grep -v grep
     initialDelaySeconds: 30
     periodSeconds: 10
+  readinessProbe:
+  httpGet:
+    path: /healthz
+    port: 80
+  initialDelaySeconds: 5
+  periodSeconds: 10
+
 
 imagePullSecrets: 
   - name: acr-cred
