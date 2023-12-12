@@ -9,6 +9,16 @@ image:
   pullPolicy: Always
   # Overrides the image tag whose default is the chart appVersion.
   tag: latest
+  port:
+    - containerPort: 3000
+  livenessProbe:
+    exec:
+      command:
+        - /bin/sh
+        - -c  
+        - ps aux | grep node | grep -v grep
+    initialDelaySeconds: 30
+    periodSeconds: 10
 
 imagePullSecrets: 
   - name: acr-cred
