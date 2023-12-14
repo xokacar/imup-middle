@@ -18,4 +18,8 @@ spec:
      - values.yaml
   destination:
     server: 'https://kubernetes.default.svc'
-    namespace: argocd 
+    namespace: argocd
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
