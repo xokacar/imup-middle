@@ -22,7 +22,7 @@ image:
   readinessProbe:
   httpGet:
     path: /healthz
-    port: 5173
+    port: 3000
   initialDelaySeconds: 5
   periodSeconds: 10
 
