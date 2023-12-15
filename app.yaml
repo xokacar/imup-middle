@@ -7,7 +7,6 @@ metadata:
     argocd-image-updater.argoproj.io/write-back-method: git:secret:secret/git-credentials
     argocd-image-updater.argoproj.io/image-list: "enhanced-devops=crmasraf001.azurecr.io/enhanced-devops:latest"
     argocd-image-updater.argoproj.io/enhanced-devops.update-strategy: latest
-    argocd-image-updater.argoproj.io/enhanced-devops.tag-match: regexp:^v1.0.0-[0-9a-zA-Z]+$
 spec: 
   project: default
   source: 
