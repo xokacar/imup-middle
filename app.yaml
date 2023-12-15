@@ -4,10 +4,9 @@ metadata:
   name: imup
   namespace: argocd
   annotations:
-    argocd-image-updater.argoproj.io/write-back-method: git:secret:secret/git-credentials
+    argocd-image-updater.argoproj.io/write-back-method: git:secret:argocd/git-credentials
     argocd-image-updater.argoproj.io/image-list: "enhanced-devops=crmasraf001.azurecr.io/enhanced-devops:latest"
-    argocd-image-updater.argoproj.io/enhanced-devops.update-strategy: latest
-    argocd-image-updater.argoproj.io/enhanced-devops.allow-tags: regexp:^[0-9a-f]{7}$
+    argocd-image-updater.argoproj.io/enhanced-devops.update-strategy: digest
 spec: 
   project: default
   source: 
