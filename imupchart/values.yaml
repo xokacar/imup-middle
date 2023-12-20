@@ -25,6 +25,8 @@ image:
   initialDelaySeconds: 5
   periodSeconds: 10
 
+strategy:
+  type: Recreate
 
 imagePullSecrets: 
   - name: acr-cred
