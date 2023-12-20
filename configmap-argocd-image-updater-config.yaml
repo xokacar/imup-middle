@@ -8,7 +8,7 @@ data:
   registries.conf: |
     {
       "auths": {
-        "youracr.azurecr.io": {
+        "crmasraf001.azurecr.io": {
           "auth": "{{ .secrets.acr-cred.auth }}"
         }
       }
