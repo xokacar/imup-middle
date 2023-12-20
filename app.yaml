@@ -16,12 +16,16 @@ spec:
     path: ./imupchart
     targetRevision: HEAD
     helm:
-     valueFiles:
-     - values.yaml
+      valueFiles:
+        - values.yaml
   destination:
     server: 'https://kubernetes.default.svc'
     namespace: argocd
   syncPolicy:
+    syncOptions:
+    - Replace=true
     automated:
       prune: true
       selfHeal: true
+
+     
