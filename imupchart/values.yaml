@@ -7,7 +7,7 @@ replicaCount: 1
 image:
   repository: crmasraf001.azurecr.io/enhanced-devops
   pullPolicy: Always
-  tag: latest
+  tag: "latest"
   port:
     - containerPort: 3000
   livenessProbe:
