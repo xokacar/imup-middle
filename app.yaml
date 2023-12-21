@@ -4,13 +4,12 @@ metadata:
   name: imup
   namespace: argocd
   annotations:
-    argocd-image-updater.argoproj.io/write-back-method: git
+    argocd-image-updater.argoproj.io/write-back-method: git:secret:argocd-image-updater/git-creds02
     argocd-image-updater.argoproj.io/write-back-target: helm
     argocd-image-updater.argoproj.io/git-branch: main
     argocd-image-updater.argoproj.io/image-list: "enhanced-devops=crmasraf001.azurecr.io/enhanced-devops:latest"
     argocd-image-updater.argoproj.io/enhanced-devops.update-strategy: latest
     argocd-image-updater.argoproj.io/enhanced-devops.force-update: "true"
-    argocd-image-updater.argoproj.io/enhanced-devops.allow-tags: regexp:^v1.0.0-[0-9a-zA-Z]+$
 spec: 
   project: default
   source: 
@@ -26,6 +25,7 @@ spec:
   syncPolicy:
     syncOptions:
     - Replace=true
+    - Force=true
     automated:
       prune: true
       selfHeal: true
