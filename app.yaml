@@ -29,5 +29,6 @@ spec:
     syncOptions:
     - Replace=true
     - Force=true
-
-     
+    - Validate=false
+    - CreateNamespace=true
+    - PruneLast=true
