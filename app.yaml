@@ -4,12 +4,12 @@ metadata:
   name: imup
   namespace: argocd
   annotations:
-    argocd-image-updater.argoproj.io/write-back-method: argocd
-    argocd-image-updater.argoproj.io/image-list: enhanceddevops=crmasraf001.azurecr.io/enhanced-devops:latest
-    argocd-image-updater.argoproj.io/enhanceddevops.update-strategy: latest
-    argocd-image-updater.argoproj.io/enhanceddevops.force-update: "true"
-  finalizers:
-    - resources-finalizer.argocd.argoproj.io
+    argocd-image-updater.argoproj.io/image-list: edev=crmasraf001.azurecr.io/enhanced-devops
+    argocd-image-updater.argoproj.io/edev.allow-tags: regexp:^dev-[a-zA-Z0-9]*$
+    argocd-image-updater.argoproj.io/edev.update-strategy: latest
+    argocd-image-updater.argoproj.io/write-back-method: git
+    argocd-image-updater.argoproj.io/git-branch: main
+    argocd-image-updater.argoproj.io/edev.pull-secret: acr-cred
 spec: 
   project: default
   source: 
