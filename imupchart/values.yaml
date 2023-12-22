@@ -9,6 +9,9 @@ config:
     api_url: https://crmasraf001.azurecr.io
     credentials: acr-cred
     default: yes
+    forceString: false
+  cm:
+    accounts.image-updater: apiKey
 
 image:
   repository: crmasraf001.azurecr.io/enhanced-devops
