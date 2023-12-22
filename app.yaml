@@ -7,9 +7,9 @@ metadata:
     argocd-image-updater.argoproj.io/image-list: edev=crmasraf001.azurecr.io/enhanced-devops
     argocd-image-updater.argoproj.io/edev.allow-tags: regexp:^dev-[a-zA-Z0-9]*$
     argocd-image-updater.argoproj.io/edev.update-strategy: latest
-    argocd-image-updater.argoproj.io/write-back-method: git
-    argocd-image-updater.argoproj.io/git-branch: main
-    argocd-image-updater.argoproj.io/edev.pull-secret: acr-cred
+    argocd-image-updater.argoproj.io/write-back-method: git:secret:argocd/git-credentials
+    argocd-image-updater.argoproj.io/git-branch: prod
+    argocd-image-updater.argoproj.io/edev.pull-secret: pullsecret:argocd/acr-cred
     argocd-image-updater.argoproj.io/edev.helm.image-name: crmasraf001.azurecr.io/enhanced-devops
     argocd-image-updater.argoproj.io/edev.helm.image-tag: latest
 spec: 
