@@ -5,7 +5,7 @@ config:
   - name: imup-middle
     prefix: crmasraf001.azurecr.io
     api_url: https://crmasraf001.azurecr.io
-    credentials: acr-cred001
+    credentials: argocd/acr-secret
     default: yes
     forceString: false
   cm:
@@ -36,7 +36,7 @@ strategy:
   type: Recreate
 
 imagePullSecrets: 
-  - name: acr-cred001
+  - name: argocd/acr-secret
 nameOverride: ""
 fullnameOverride: ""
 

@@ -7,7 +7,7 @@ metadata:
     argocd-image-updater.argoproj.io/image-list: edev=https://crmasraf001.azurecr.io/enhanced-devops
     argocd-image-updater.argoproj.io/edev.update-strategy: latest
     argocd-image-updater.argoproj.io/write-back-method: git:secret:argocd-image-updater/git-patko
-    argocd-image-updater.argoproj.io/edev.pull-secret: pullsecret:acr-cred001
+    argocd-image-updater.argoproj.io/edev.pull-secret: pullsecret:argocd/acr-secret
 spec: 
   project: default
   source: 
