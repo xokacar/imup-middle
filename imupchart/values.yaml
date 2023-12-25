@@ -5,7 +5,7 @@ config:
   - name: imup-middle
     prefix: crmasraf001.azurecr.io
     api_url: https://crmasraf001.azurecr.io
-    credentials: acr-cred
+    credentials: acr-secret
     default: yes
     forceString: false
   cm:
